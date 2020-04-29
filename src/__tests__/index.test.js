@@ -30,6 +30,16 @@ describe('functional-light', () => {
         assert.equal(isEmpty(cons('1', [])), false); // false
         assert.equal(isEmpty([]), true); // true
         assert.equal(isEmpty(9), false); // false
+        assert.equal(isEmpty(""), true); // false
+        assert.equal(isEmpty("foo"), false); // false
+    });
+    it('test isString', () => {
+        assert.equal(isString(1), false); // false
+        assert.equal(isString([]), false); // false
+        assert.equal(isString([1,2,3]), false); // false
+        assert.equal(isString(""), true); // true
+        assert.equal(isString("1"), true); // true
+        assert.equal(isString("[1,2,3]"), true); // true
     });
     it('test length', () => {
         assert.equal(length(cons('1', [])), 1); // TRUE
